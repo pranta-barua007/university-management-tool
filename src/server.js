@@ -1,40 +1,19 @@
-import express from "express"; //importing or using express package in this file
-import { insertUser, findUserByEmail } from "./models/user/user.model.js";
+import http from "http";
+import app from "./app.js";
+import { mongoConnect } from "./services/mongo.js";
+import donenv from "dotenv";
 
-const app = express(); //intializing express to app constant
+donenv.config();
+const server = http.createServer(app); // passing express app to node server
 
-app.use(express.json()); //middleware function to decode JSON req
+async function startServer() {
+  await mongoConnect();
 
-app.get("/", (req, res) => {
-  res.send("Hello from server");
-});
+  const PORT = process.env.PORT || 4000;
 
-app.get("/me", (req, res) => {
-  res.send("Hello from me route or path");
-});
+  server.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}....`);
+  });
+}
 
-app.post("/login", (req, res) => {
-  const { email, password } = req.body;
-  const userFound = findUserByEmail(email);
-  let user = null;
-
-  if (userFound) {
-    if (userFound.password === password) {
-      user = userFound;
-    }
-  }
-
-  res.json(user);
-});
-
-app.post("/signup", (req, res) => {
-  const { email, password } = req.body;
-  const createUser = insertUser(email, password);
-  res.json({ data: createUser });
-});
-
-const PORT = 4000;
-app.listen(PORT, () => {
-  //it runs the server
-  console.log("Server is runnig on PORT" + " " + PORT);
-});
+startServer();
