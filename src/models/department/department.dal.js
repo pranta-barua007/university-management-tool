@@ -1,4 +1,5 @@
 import departmentSchema from "./department.schema.js";
+import errorMessage from "../../error/error-message.js";
 
 //This file is data access layer for department model
 
@@ -27,7 +28,7 @@ async function createDepartment({ name, code, createdAt }) {
     const departmentExists = await findDepartment({ code });
 
     if (departmentExists) {
-      throw new Error("Department already exists");
+      throw new Error(`Department ${errorMessage.alreadyExist}`);
     }
 
     //INSERT INTO department(name, code, createdAt) VALUES(name, code, createdAt)
@@ -48,7 +49,7 @@ async function updateDepartment(filterQueryObject, updatedDataObject) {
     const departmentExists = await findDepartment(filterQueryObject);
 
     if (!departmentExists) {
-      throw new Error("Department not found!");
+      throw new Error(`Department ${errorMessage.notFound}`);
     }
 
     //UPDATE department SET col = updatedData WHERE col = condition
@@ -71,7 +72,7 @@ async function deleteDepartment(filterQueryObject) {
     const departmentExists = await findDepartment(filterQueryObject);
 
     if (!departmentExists) {
-      throw new Error("Department not found!");
+      throw new Error(`Department ${errorMessage.notFound}`);
     }
 
     //DELETE FROM department WHERE col = condition
