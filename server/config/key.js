@@ -1,3 +1,3 @@
 module.exports = {
-  secretOrKey: "doWhatISayToyou",
+  secretOrKey: process.env.JWT_SECRET,
 };
