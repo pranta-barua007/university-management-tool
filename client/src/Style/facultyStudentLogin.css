@@ -1,7 +1,7 @@
 
 
 #trail {
-    background: url('./Images/green-chameleon-s9CC2SKySJM-unsplash.jpg')
+    background: url('./Images/home.jpg')
     center/cover no-repeat fixed ;
-    
+    height: 100vh;
 }
