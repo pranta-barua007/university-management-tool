@@ -20,7 +20,11 @@ const Home = () => {
   useEffect(() => {
     dispatch(newerChats(store.student.student.student.name));
     dispatch(previousChats(store.student.student.student.name));
-  }, [store.student.newerChats.length]);
+  }, [
+    store.student.newerChats.length,
+    store.student.student.student.name,
+    dispatch,
+  ]);
   const logoutHandler = () => {
     dispatch(studentLogout());
     history.push("/");
@@ -61,7 +65,7 @@ const Home = () => {
                   </button>
                 </li>
                 <li className="nav-item dropdown">
-                  <a
+                  <div
                     className="nav-link dropdown-toggle"
                     id="navbarDropdown"
                     role="button"
@@ -70,7 +74,7 @@ const Home = () => {
                     aria-expanded="false"
                   >
                     ACADEMIC{" "}
-                  </a>
+                  </div>
                   <div
                     className="dropdown-menu"
                     aria-labelledby="navbarDropdown"
