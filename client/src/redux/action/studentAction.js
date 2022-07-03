@@ -5,8 +5,6 @@ import {
   SET_STUDENT,
   SET_ERRORS_HELPER,
   SET_ERRORS,
-  STUDENT_UPDATE_PASSWORD,
-  SET_OTP,
   SET_FLAG,
 } from "../actionTypes";
 import API_URL from "../../api-url";
@@ -119,7 +117,7 @@ export const studentLogin = (studentCredential) => {
 export const studentUpdatePassword = (passwordData) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios({
+      await axios({
         method: "Post",
         url: url + "/api/student/updatePassword",
         data: passwordData,
@@ -189,7 +187,7 @@ export const getOTPStudent = (studentEmail) => {
 export const submitOTPStudent = (newPasswordWithOtp, history) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios({
+      await axios({
         method: "Post",
         url: url + "/api/student/postOTP",
         data: newPasswordWithOtp,
@@ -208,7 +206,7 @@ export const submitOTPStudent = (newPasswordWithOtp, history) => {
 export const sendMessage = (room, messageobj) => {
   return async () => {
     try {
-      const { data } = await axios({
+      await axios({
         method: "Post",
         url: url + `/api/student/chat/${room}`,
         data: messageobj,
@@ -278,7 +276,7 @@ export const newerChats = (receiverName) => {
 export const studentUpdate = (updatedData) => {
   return async () => {
     try {
-      const { data } = await axios({
+      await axios({
         method: "Post",
         url: url + `/api/student/updateProfile`,
         data: updatedData,

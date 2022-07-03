@@ -114,7 +114,7 @@ export const adminGetAllSubjects = () => {
 export const adminAddFaculty = (facultyCredential) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios({
+      await axios({
         method: "Post",
         url: url + "/api/admin/addFaculty",
         data: facultyCredential,
@@ -133,7 +133,7 @@ export const adminAddFaculty = (facultyCredential) => {
 export const adminAddStudent = (studentCredential) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios({
+      await axios({
         method: "Post",
         url: url + "/api/admin/addStudent",
         data: studentCredential,
@@ -152,7 +152,7 @@ export const adminAddStudent = (studentCredential) => {
 export const adminAddSubject = (subjectCredential) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios({
+      await axios({
         method: "Post",
         url: url + "/api/admin/addSubject",
         data: subjectCredential,
@@ -171,7 +171,7 @@ export const adminAddSubject = (subjectCredential) => {
 export const adminAddAdmin = (adminCredentails) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios({
+      await axios({
         method: "Post",
         url: url + "/api/admin/addAdmin",
         data: adminCredentails,

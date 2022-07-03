@@ -61,7 +61,7 @@ export const facultyLogin = (facultyCredential) => {
 export const facultyUpdatePassword = (passwordData) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios({
+      await axios({
         method: "Post",
         url: url + "/api/faculty/updatePassword",
         data: passwordData,
@@ -98,7 +98,7 @@ export const getOTPFaculty = (studentEmail) => {
 export const submitOTPFaculty = (newPasswordWithOtp, history) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios({
+      await axios({
         method: "Post",
         url: url + "/api/faculty/postOTP",
         data: newPasswordWithOtp,
@@ -143,7 +143,7 @@ const facultyUpdateProfileFlag = (data) => {
 export const facultyUpdate = (updatedData) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios({
+      await axios({
         method: "Post",
         url: url + `/api/faculty/updateProfile`,
         data: updatedData,

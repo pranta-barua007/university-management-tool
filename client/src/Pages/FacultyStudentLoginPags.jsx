@@ -46,8 +46,7 @@ const FacultyStudentLoginPags = () => {
 
   const facultyFormHandler = (e) => {
     e.preventDefault();
-    let registrationNumber;
-    let password;
+
     setIsFacultyLoading(true);
     dispatch(
       facultyLogin({
@@ -67,8 +66,7 @@ const FacultyStudentLoginPags = () => {
 
   const studentFormHandler = (e) => {
     e.preventDefault();
-    let registrationNumber;
-    let password;
+
     setIsStudentLoading(true);
     dispatch(
       studentLogin({
