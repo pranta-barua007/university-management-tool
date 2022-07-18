@@ -12,6 +12,7 @@ import { setStudentUser, studentLogout } from "./redux/action/studentAction";
 
 import LoginPage from "./Pages/LoginPage";
 import Home from "./Pages/StudentHome";
+import Team from "./Pages/Team";
 
 import StudentDetails from "./Pages/StudentDetails";
 import facultyInterface from "./Pages/FacultyInterface";
@@ -92,6 +93,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={FacultyStudentLoginPags} />
+          <Route exact path="/team" component={Team} />
           <Route exact path="/adminLogin" component={LoginPage} />
           <Route exact path="/home" component={Home} />
           <Route

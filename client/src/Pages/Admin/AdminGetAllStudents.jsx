@@ -27,6 +27,7 @@ const AdminGetAllFaculty = () => {
       setIsLoading(false);
     }
   }, [store.admin.allStudent.length]);
+
   return (
     <div>
       {store.admin.isAuthenticated ? (

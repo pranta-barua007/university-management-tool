@@ -86,26 +86,32 @@ const FacultyStudentLoginPags = () => {
 
   return (
     <div className="container-fluid">
-      <div className="row" id="trail">
+      <div
+        className="row d-flex justify-content-center align-items-center"
+        id="trail"
+      >
         <div className="col-md-6"></div>
         <div className="col-md-6">
           <div className="row m-5">
             <div
-              className="col-md-8 m-auto border"
+              className="col-md-8 m-auto"
               style={{
-                backgroundColor: "white",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                color: "whitesmoke",
+                fontSize: "1.2rem",
                 borderRadius: "1.2rem",
                 padding: "1rem 1rem 0rem 1rem",
               }}
             >
               <div>
                 <h3 className="text-center ">FACULTY</h3>
-                <form noValidate onSubmit={facultyFormHandler}>
+                <form onSubmit={facultyFormHandler}>
                   <div className="form-group">
                     <label htmlFor="facRegId">Registration Number</label>
                     <input
                       onChange={(e) => setFacultyRegNum(e.target.value)}
                       type="text"
+                      required
                       value={facultyRegNum}
                       className={classnames("form-control", {
                         "is-invalid": errors.registrationNumber,
@@ -123,6 +129,7 @@ const FacultyStudentLoginPags = () => {
                     <input
                       onChange={(e) => setFacultyPassword(e.target.value)}
                       value={facultyPassword}
+                      required
                       className={classnames("form-control", {
                         "is-invalid": errors.password,
                       })}
@@ -159,21 +166,24 @@ const FacultyStudentLoginPags = () => {
           </div>
           <div className="row m-5">
             <div
-              className="col-md-8 m-auto border"
+              className="col-md-8 m-auto"
               style={{
-                backgroundColor: "white",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                color: "whitesmoke",
+                fontSize: "1.2rem",
                 borderRadius: "1.2rem",
                 padding: "1rem 1rem 0rem 1rem",
               }}
             >
               <div>
                 <h3 className="text-center">STUDENT</h3>
-                <form noValidate onSubmit={studentFormHandler}>
+                <form onSubmit={studentFormHandler}>
                   <div className="form-group">
                     <label htmlFor="studentId">Registration Number</label>
                     <input
                       onChange={(e) => setStudentRegNum(e.target.value)}
                       type="text"
+                      required
                       value={studentRegNum}
                       className={classnames("form-control", {
                         "is-invalid": errorsHelper.registrationNumber,
@@ -190,6 +200,7 @@ const FacultyStudentLoginPags = () => {
                     <label htmlFor="passwordId">Password</label>
                     <input
                       onChange={(e) => setStudentPassword(e.target.value)}
+                      required
                       value={studentPassword}
                       className={classnames("form-control", {
                         "is-invalid": errorsHelper.password,
@@ -225,6 +236,18 @@ const FacultyStudentLoginPags = () => {
                 </p>
               </div>
             </div>
+          </div>
+          <div className="row m-5 d-flex justify-content-center align-items-center">
+            <p className="text-center">
+              <Link
+                style={{
+                  color: "#00c2cb",
+                }}
+                to="/team"
+              >
+                Made with 🖤 by UMS Team
+              </Link>
+            </p>
           </div>
         </div>
       </div>

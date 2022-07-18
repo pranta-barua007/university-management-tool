@@ -35,7 +35,7 @@ const Home = () => {
         <div className="col">
           <nav className="navbar navbar-expand-lg navbar-light  bg-light">
             <h4 className="navbar-brand mt-1" href="">
-              SRM
+              UMS
             </h4>
             <button
               className="navbar-toggler"

@@ -1,7 +1,7 @@
 
 
 #trail {
-    background: url('./Images/home.jpg')
+    background: url('./Images/home.png')
     center/cover no-repeat fixed ;
     height: 100vh;
 }

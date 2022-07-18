@@ -195,6 +195,7 @@ export const adminGetAllFaculty = (department) => {
         url: url + "/api/admin/getAllFaculty",
         data: department,
       });
+
       dispatch(adminGetAllFacultyHelper(data.result));
     } catch (err) {
       dispatch({
