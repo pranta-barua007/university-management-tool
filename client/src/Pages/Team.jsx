@@ -66,8 +66,8 @@ const Team = () => {
       <div
         style={{
           height: "80vh",
-
           display: "flex",
+          flexWrap: "wrap",
           gap: "2rem",
           justifyContent: "center",
           alignItems: "center",
