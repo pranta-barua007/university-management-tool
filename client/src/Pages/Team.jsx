@@ -21,6 +21,7 @@ const Member = ({ name, picture, sid }) => {
     >
       <img
         src={picture}
+        alt="team-member"
         style={{
           height: "220px",
           width: "220px",

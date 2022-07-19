@@ -1,7 +1,7 @@
-
-
 #trail {
-    background: url('./Images/home.png')
-    center/cover no-repeat fixed ;
-    height: 100vh;
+    background: url('./Images/home.png');
+    background-size:cover;
+    background-position:center center;
+    background-attachment:fixed;
+    min-height: 100vh;
 }

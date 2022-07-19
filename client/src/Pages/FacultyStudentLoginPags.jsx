@@ -251,7 +251,7 @@ const FacultyStudentLoginPags = () => {
                 }}
                 to="/team"
               >
-                Made with 🖤 by UMS Team
+                Made with &#10084; by UMS Team
               </Link>
             </p>
           </div>
