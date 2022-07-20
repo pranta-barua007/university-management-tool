@@ -11,11 +11,11 @@ const Member = ({ name, picture, sid }) => {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "1rem",
+        gap: "0.5rem",
         justifyContent: "center",
         alignItems: "center",
         borderRadius: "25px",
-        padding: "2rem",
+        padding: "1.5rem",
         backgroundColor: "whitesmoke",
       }}
     >
@@ -65,28 +65,35 @@ const Team = () => {
     <div className="container">
       <div
         style={{
-          height: "80vh",
+          padding: "1rem 0",
           display: "flex",
           flexWrap: "wrap",
-          gap: "2rem",
+          gap: "1rem",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        {devsData.map((dev) => (
-          <Member name={dev.name} picture={dev.picture} sid={dev.sid} />
+        {devsData.map((dev, idx) => (
+          <Member
+            key={idx}
+            name={dev.name}
+            picture={dev.picture}
+            sid={dev.sid}
+          />
         ))}
       </div>
-      <h4>
-        <Link
-          style={{
-            color: "#00c2cb",
-          }}
-          to={"/"}
-        >
-          &#8592; Back To Home
-        </Link>
-      </h4>
+      <div>
+        <h4>
+          <Link
+            style={{
+              color: "#00c2cb",
+            }}
+            to={"/"}
+          >
+            &#8592; Back To Home
+          </Link>
+        </h4>
+      </div>
     </div>
   );
 };
