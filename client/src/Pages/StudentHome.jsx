@@ -89,14 +89,14 @@ const Home = () => {
                               : "NA"}
                           </td>
                         </tr>
-                        <tr>
+                        {/* <tr>
                           <td>Aadhar Card</td>
                           <td>
                             {store.student.student.student.aadharCard
                               ? store.student.student.student.aadharCard
                               : "NA"}{" "}
                           </td>
-                        </tr>
+                        </tr> */}
                         <tr>
                           <td>Father Name</td>
                           <td>
