@@ -51,11 +51,11 @@ const Chat = (props) => {
       room1,
       room2,
     });
-    socket.on("new Message", (data) => {
-      setMessageArray([...messageArray, data]);
-    });
+    socket.on("new Message", (data) =>
+      setMessageArray((messageArray) => [...messageArray, data])
+    );
     return () => {
-      socket.emit("disconnect");
+      socket.disconnect();
       socket.off();
     };
   }, [room1, room2]);
@@ -89,7 +89,7 @@ const Chat = (props) => {
       setOlderMessages(store.student.privateChat);
       setMessageArray([...messageArray, data]);
     });
-  }, [messageArray, olderMessages]);
+  }, [messageArray, olderMessages, store.student.privateChat]);
 
   return (
     <div>
