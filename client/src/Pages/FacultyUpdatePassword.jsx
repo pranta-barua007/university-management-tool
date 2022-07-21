@@ -90,6 +90,7 @@ const FacultyUpdatePassword = () => {
                         {error.confirmNewPassword}
                       </div>
                     )}
+                    <p></p>
                   </div>
                   <button type="submit" className="btn btn-info btn-block ">
                     Update Password
