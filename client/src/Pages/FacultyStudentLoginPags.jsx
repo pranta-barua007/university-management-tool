@@ -164,7 +164,6 @@ const FacultyStudentLoginPags = () => {
                     Forgot Password
                   </Link>
                 </p>
-                {/* <p>{""}</p> */}
               </div>
             </div>
           </div>
@@ -241,7 +240,6 @@ const FacultyStudentLoginPags = () => {
                     Forgot Password
                   </Link>
                 </p>
-                <p>{""}</p>
               </div>
             </div>
           </div>
